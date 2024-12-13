@@ -3,10 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';
+    font-family: 'Poppins',sans-serif;
 }
 body{
-    font-family:'Poppins';
+    font-family:'Poppins',sans-serif;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Regular.woff2') format('woff2'),
+         url('./fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .header {
@@ -346,7 +354,7 @@ p {
 }
 
 .account{
-     background: radial-gradient(circle,  black, whitesmoke); 
+     background: radial-gradient(circle, whitesmoke, #FFB08D); 
     
 }
 
@@ -1081,4 +1089,36 @@ hr {
 }
 
 
+@media (max-width: 1385px){
+    .camp2{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp4{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp1{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp3{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp5{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp6{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+}
 
