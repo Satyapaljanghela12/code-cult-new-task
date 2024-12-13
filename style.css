@@ -1082,3 +1082,55 @@ hr {
 }
 
 
+<<<<<<< HEAD
+=======
+/* @media (max-width: 1385px){
+    .camp2{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp4{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp1{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp3{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp5{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .camp6{
+        width: 100%;
+        height: 235px;
+    display: block;
+    }
+    .research {width: 100%;
+    height: 217px;
+    border-radius: 10px;
+    transition: transform 0.4s ease-out;
+    }
+    .webdev{
+        width: 100%;
+        height: 234px;
+        border-radius: 10px;
+        transition: transform 0.4s ease-out;
+    }
+    .security{
+        width: 100%;
+        height: 183px;
+        border-radius: 10px;
+        transition: transform 0.4s ease-out;
+    }
+} */
+>>>>>>> fc96a00e7e05af703c3f773e2be40adb19d15fb2
