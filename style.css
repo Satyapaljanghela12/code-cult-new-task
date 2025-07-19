@@ -31,6 +31,11 @@ nav .logo {
     font-size: 24px;
     color: #fff3f3;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .logo:hover {
+    color: #24f8c7;
 }
 
 nav .fab {
@@ -57,6 +62,11 @@ nav .fab {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #24f8c7;
 }
 
 .nav-links ul li::after {
@@ -126,6 +136,8 @@ nav .fab {
   color: white;
   background:#0b775e ;
     transition:ease-in 0.3s;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(11, 119, 94, 0.3);
 }
 
 nav .fa {
@@ -683,6 +695,8 @@ p {
 
 .icons .fab:hover{
     color: #24f8c7;
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
 }
 
 
@@ -778,6 +792,8 @@ p {
   .footer-section ul li a:hover {
     text-decoration: none;
     color: #0b775e;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
   }
   
   .footer-bottom {
@@ -1079,58 +1095,119 @@ hr {
     border: 1px solid #ccc;
     outline: none;
     box-sizing: border-box;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.content-col input:focus, .content-col textarea:focus {
+    border-color: #24f8c7;
+    box-shadow: 0 0 0 3px rgba(36, 248, 199, 0.1);
+}
+
+/* Enhanced animations and effects */
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(36, 248, 199, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+/* Enhanced button styles */
+.hero_btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hero_btn:hover::before {
+    left: 100%;
+}
+
+/* Enhanced card hover effects */
+.course-col, .facilities-col, .testimonials-col {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-col::before, .facilities-col::before, .testimonials-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(36, 248, 199, 0.1), rgba(102, 126, 234, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.course-col:hover::before, .facilities-col:hover::before, .testimonials-col:hover::before {
+    opacity: 1;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced form styles */
+.comment-form input, .comment-form textarea {
+    transition: all 0.3s ease;
+}
+
+.comment-form input:focus, .comment-form textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(36, 248, 199, 0.2);
+}
+
+/* Loading animation for images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Enhanced navigation */
+.nav-links ul li {
+    position: relative;
+}
+
+.nav-links ul li::after {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links ul li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 
-<<<<<<< HEAD
-=======
-/* @media (max-width: 1385px){
-    .camp2{
-        width: 100%;
-        height: 235px;
-    display: block;
-    }
-    .camp4{
-        width: 100%;
-        height: 235px;
-    display: block;
-    }
-    .camp1{
-        width: 100%;
-        height: 235px;
-    display: block;
-    }
-    .camp3{
-        width: 100%;
-        height: 235px;
-    display: block;
-    }
-    .camp5{
-        width: 100%;
-        height: 235px;
-    display: block;
-    }
-    .camp6{
-        width: 100%;
-        height: 235px;
-    display: block;
-    }
-    .research {width: 100%;
-    height: 217px;
-    border-radius: 10px;
-    transition: transform 0.4s ease-out;
-    }
-    .webdev{
-        width: 100%;
-        height: 234px;
-        border-radius: 10px;
-        transition: transform 0.4s ease-out;
-    }
-    .security{
-        width: 100%;
-        height: 183px;
-        border-radius: 10px;
-        transition: transform 0.4s ease-out;
-    }
-} */
->>>>>>> fc96a00e7e05af703c3f773e2be40adb19d15fb2

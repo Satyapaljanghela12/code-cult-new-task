@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Learn Skill</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html">Learn<i class="fab fa-staylinked"></i>kill</a>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#courses" class="nav-link" data-section="courses">
+                            <i class="fas fa-book"></i>
+                            <span>My Courses</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#browse" class="nav-link" data-section="browse">
+                            <i class="fas fa-search"></i>
+                            <span>Browse Courses</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link" data-section="progress">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Progress</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link" data-section="profile">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link" data-section="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+                
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search courses...">
+                    </div>
+                    
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                    
+                    <div class="user-menu">
+                        <div class="user-avatar">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=1" alt="User Avatar" id="userAvatar">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name" id="userName">Loading...</span>
+                            <span class="user-role" id="userRole">Student</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content-wrapper">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="content-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 id="enrolledCoursesCount">0</h3>
+                                <p>Enrolled Courses</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>2</h3>
+                                <p>Certificates</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>45h</h3>
+                                <p>Learning Hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>85%</h3>
+                                <p>Average Score</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="recent-courses">
+                            <h2>Continue Learning</h2>
+                            <div class="course-list" id="recentCoursesList">
+                                <!-- Recent courses will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="activity-feed">
+                            <h2>Recent Activity</h2>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Started lesson "Introduction to React"</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Completed "JavaScript Fundamentals"</p>
+                                        <span class="activity-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Earned "Web Developer" badge</p>
+                                        <span class="activity-time">3 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Browse Courses Section -->
+                <section id="browse-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Browse Courses</h2>
+                        <div class="course-filters">
+                            <select id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Artificial Intelligence">AI & Machine Learning</option>
+                                <option value="Cybersecurity">Cybersecurity</option>
+                                <option value="Mobile Development">Mobile Development</option>
+                                <option value="Robotics">Robotics</option>
+                            </select>
+                            
+                            <select id="levelFilter">
+                                <option value="">All Levels</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="courses-grid" id="coursesGrid">
+                        <!-- Courses will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- My Courses Section -->
+                <section id="courses-section" class="content-section">
+                    <div class="section-header">
+                        <h2>My Courses</h2>
+                        <div class="course-tabs">
+                            <button class="tab-btn active" data-tab="enrolled">Enrolled</button>
+                            <button class="tab-btn" data-tab="completed">Completed</button>
+                            <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+                        </div>
+                    </div>
+                    
+                    <div class="my-courses-grid" id="myCoursesGrid">
+                        <!-- User's courses will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile-section" class="content-section">
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1" alt="Profile Avatar">
+                                <button class="avatar-edit-btn">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <div class="profile-info">
+                                <h2 id="profileName">Loading...</h2>
+                                <p id="profileEmail">Loading...</p>
+                                <span class="profile-badge" id="profileRole">Student</span>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-content">
+                            <div class="profile-form">
+                                <h3>Personal Information</h3>
+                                <form id="profileForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profileFirstName">First Name</label>
+                                            <input type="text" id="profileFirstName" name="firstName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profileLastName">Last Name</label>
+                                            <input type="text" id="profileLastName" name="lastName">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="profileBio">Bio</label>
+                                        <textarea id="profileBio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profilePhone">Phone</label>
+                                            <input type="tel" id="profilePhone" name="phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profileDateOfBirth">Date of Birth</label>
+                                            <input type="date" id="profileDateOfBirth" name="dateOfBirth">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="profileAddress">Address</label>
+                                        <input type="text" id="profileAddress" name="address">
+                                    </div>
+                                    
+                                    <button type="submit" class="save-btn">
+                                        <i class="fas fa-save"></i>
+                                        Save Changes
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections (progress, settings) can be added here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
